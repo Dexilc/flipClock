@@ -1,6 +1,6 @@
 # Flip Clock Webpage
 
-**link:** [clock.nicejob.xyz](http://clock.nicejob.xyz/) [中文版], [Github Pages](https://zyjacya-in-love.github.io/flipclock-webpage/) [ENG]
+**link:** [clock.nicejob.xyz](http://clock.nicejob.xyz/) [中文版], [Gitee Pages](https://d3vilc.gitee.io/flipclock/) [ENG]
 
 ## Introduction
 
@@ -8,16 +8,7 @@ A webpage that include a beautiful flip clock and year-month-day + week.
 
 It's just a good clock when you have two screen and the small one display the webpage (with full-screen).
 
-<p>
-    <img alt="landscape" src="./__READMEimages__/landscape.png" width="400">
-    <img alt="landscape" src="./__READMEimages__/landscape_en.png" width="400">
-</p>
-
-<p>
-    <img alt="portrait" src="./__READMEimages__/portrait.png" width="200">
-    <img alt="portrait" src="./__READMEimages__/portrait_en.png" width="200">
-</p>
-
+中文版请查看原作者，修改了英文版周显示bug,英文情况下0代表Sunday,对样式进行小修改
 
 ## Reference
 
