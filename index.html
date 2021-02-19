@@ -35,12 +35,34 @@
       clockFace: 'TwelveHourClock',
       showSeconds: false
     });
+    setRegular()
   });
   var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   var week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
   var d = new Date();
-  // document.getElementById('ShowDate').innerHTML = d.getFullYear() + "年" +(d.getMonth() + 1) + "月" + d.getDate() + "日" + ' 星期'+'日一二三四五六'.charAt(new Date().getDay());
-  document.getElementById('ShowDate').innerHTML = d.getFullYear() + "-" + month[d.getMonth()] + "-" + d.getDate() + ', ' + week[d.getDay()];
+
+  function setRegular(targetHour) {
+    var timeInterval, nowSeconds, targetSeconds
+
+    // 计算当前时间的秒数
+    nowSeconds = d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds()
+
+    // 计算目标时间对应的秒数
+    targetSeconds = targetHour * 3600
+
+    //  判断是否已超过今日目标小时，若超过，时间间隔设置为距离明天目标小时的距离
+    timeInterval = targetSeconds > nowSeconds ? targetSeconds - nowSeconds : targetSeconds + 24 * 3600 - nowSeconds
+
+    setTimeout(showYmd, timeInterval * 1000)
+  }
+
+  function showYmd() {
+    // document.getElementById('ShowDate').innerHTML = d.getFullYear() + "年" +(d.getMonth() + 1) + "月" + d.getDate() + "日" + ' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+    document.getElementById('ShowDate').innerHTML = d.getFullYear() + "-" + month[d.getMonth()] + "-" + d.getDate() + ', ' + week[d.getDay()];
+    setTimeout(showYmd, 24 * 3600 * 1000) //之后每天调用一次
+
+  }
+  setRegular(7); //比如目标是每天早上8点
   </script>
 </body>
 
