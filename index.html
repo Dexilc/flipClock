@@ -35,12 +35,21 @@
       clockFace: 'TwelveHourClock',
       showSeconds: false
     });
-    setRegular()
+    setRegular(0)
   });
   var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   var week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
   var d = new Date();
+  // 每天定时执行参考文章
+  /**
+   * https://blog.csdn.net/u014789022/article/details/85119677
+   *
+   * https://blog.csdn.net/Null_Bugs/article/details/80883216
+   */
 
+/*
+  入参是目标时间的小时数，取值0-23，当然可以根据需要拓展成分钟数，这里主要是提供思路所以从简
+ */
   function setRegular(targetHour) {
     var timeInterval, nowSeconds, targetSeconds
 
@@ -62,7 +71,7 @@
     setTimeout(showYmd, 24 * 3600 * 1000) //之后每天调用一次
 
   }
-  setRegular(7); //比如目标是每天早上8点
+
   </script>
 </body>
 
