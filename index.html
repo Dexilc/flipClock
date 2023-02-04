@@ -29,7 +29,6 @@
   }
 
   var clock;
-
   $(document).ready(function() {
     clock = $('.clock').FlipClock({
       clockFace: 'TwelveHourClock',
@@ -37,7 +36,25 @@
     });
     showYmd()
     setRegular(0)
+    $(document).keydown(function (event) {
+        const keyname = event.key.toLocaleLowerCase();
+        if ( keyname === 'f') {
+          toggleFullscreen()
+        }
+   })
   });
+  function toggleFullscreen() {
+  let elem = document.querySelector("#box");
+
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+}
+
   var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
   var week = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
   var d = new Date();
