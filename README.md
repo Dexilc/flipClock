@@ -1,6 +1,6 @@
 # Flip Clock Webpage
 
-**link:** [clock.nicejob.xyz](http://clock.nicejob.xyz/) [中文版], [Gitee Pages](https://d3vilc.gitee.io/flipclock/) [ENG]
+**link:** [clock.nicejob.xyz](http://clock.nicejob.xyz/) [中文版], [Gitee Pages](https://dexilc.github.io/flipClock/) [ENG]
 
 ## Introduction
 
